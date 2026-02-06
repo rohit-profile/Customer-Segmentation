@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <title>Customer Segment Predictor</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Customer Segmentation</h2>
+
+    <form method="POST">
+        <label>Gender</label>
+        <select name="gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <label>Age</label>
+        <input type="number" name="age" required>
+
+        <label>Annual Income (k$)</label>
+        <input type="number" name="income" required>
+
+        <label>Spending Score</label>
+        <input type="number" name="score" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if segment %}
+        <h3>🎯 Segment: {{ segment }}</h3>
+        <p>Cluster ID: {{ cluster }}</p>
+    {% endif %}
+
+         <footer>Powered by Rohit</footer> 
+</div>
+
+</body>
+</html>
